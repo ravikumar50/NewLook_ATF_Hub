@@ -1,12 +1,16 @@
+import { Route, Routes } from 'react-router-dom'
 import './App.css'
 import Footer from './Components/Footer'
-import HomeLayout from './Layout/Homelayout'
+import HomeLayout from './Layouts/Homelayout'
+import Login from './Pages/Login'
 
 function App() {
   return(
-    <HomeLayout>
-      
-    </HomeLayout>
+    <>
+      <Routes>
+        <Route path='/login' element={<Login/>}></Route>
+      </Routes>
+    </>
   )
 }
 
