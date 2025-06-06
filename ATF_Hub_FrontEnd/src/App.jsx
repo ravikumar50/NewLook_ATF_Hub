@@ -9,6 +9,8 @@ function App() {
       <Routes>
         <Route path='/' element={<HomePage/>}></Route>
         <Route path='/login' element={<Login/>}></Route>
+        {/* <Route path='/upload' element={</>}></Route>
+        <Route path='/download' element={</>}></Route> */}
       </Routes>
     </>
   )
