@@ -13,7 +13,7 @@ const msalConfig = {
   auth: {
     clientId: "3bd9f365-c333-4590-9b07-f6cd62fa936b",
     authority: "https://login.microsoftonline.com/c6326554-6b7c-4df2-85c1-d8f8c3824de9",
-    redirectUri: "http://localhost:5173/"
+    redirectUri: "https://demonewlook-drftaegrg5gyeyff.canadacentral-01.azurewebsites.net"
   }
 };
 
