@@ -1,23 +1,19 @@
+import { useEffect } from "react";
 import { useMsal } from "@azure/msal-react";
-import { Button } from "@/components/ui/button"; // if using shadcn or custom component
-import "./Login.css"; // optional styling
 
 function Login() {
-  const { instance } = useMsal();
+  const { instance, accounts } = useMsal();
 
-  const handleLogin = () => {
-    instance.loginRedirect(); // Triggers Microsoft login
-  };
+  useEffect(() => {
+    // If already logged in, redirect to home
+    if (accounts.length > 0) {
+      window.location.replace("/");
+    } else {
+      instance.loginRedirect(); // Automatically redirect to Microsoft login
+    }
+  }, [accounts, instance]);
 
-  return (
-    <div className="login-container">
-      <h2>Welcome!</h2>
-      <p>Please sign in to continue.</p>
-      <Button onClick={handleLogin}>
-        Login with Microsoft
-      </Button>
-    </div>
-  );
+  return null; // No UI
 }
 
 export default Login;

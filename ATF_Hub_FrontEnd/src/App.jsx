@@ -1,25 +1,27 @@
-import { Route, Routes, Navigate } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Login from './Pages/Login';
 import HomePage from './Pages/HomePage';
 
-import { useIsAuthenticated } from "@azure/msal-react";
+import { MsalAuthenticationTemplate } from '@azure/msal-react';
+import { InteractionType } from "@azure/msal-browser";
+import DownloadPage from './Pages/DownloadPage';
 
 function App() {
-  const isAuthenticated = useIsAuthenticated();
-
   return (
     <Routes>
-      <Route path="/login" element={<Login />} />
       <Route
         path="/"
         element={
-          isAuthenticated ? <HomePage /> : <Navigate to="/login" />
+          <MsalAuthenticationTemplate interactionType={InteractionType.Redirect}>
+            <HomePage />
+          </MsalAuthenticationTemplate>
         }
       />
+      <Route path="/login" element={<Login />} />
+      <Route path="/download" element={<DownloadPage />} />
     </Routes>
   );
 }
 
 export default App;
-
