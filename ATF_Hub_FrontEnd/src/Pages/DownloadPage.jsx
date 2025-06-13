@@ -4,7 +4,7 @@ function DownloadPage() {
   const [files, setFiles] = useState([]);
 
   useEffect(() => {
-    fetch('https://functionapptry.azurewebsites.net/api/demofunctionapp') // Replace with actual function URL
+    fetch('https://functionapptry.azurewebsites.net/api/listBlobs') // Replace with actual function URL
       .then(res => res.json())
       .then(data => setFiles(data))
       .catch(err => console.error("Error fetching files:", err));
