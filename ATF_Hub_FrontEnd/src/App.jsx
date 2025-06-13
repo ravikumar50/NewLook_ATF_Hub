@@ -6,6 +6,7 @@ import HomePage from './Pages/HomePage';
 import { MsalAuthenticationTemplate } from '@azure/msal-react';
 import { InteractionType } from "@azure/msal-browser";
 import DownloadPage from './Pages/DownloadPage';
+import Contact from './Pages/Contact';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       />
       <Route path="/login" element={<Login />} />
       <Route path="/download" element={<DownloadPage />} />
+      <Route path="/contact" element={<Contact />} />
     </Routes>
   );
 }
