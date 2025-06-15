@@ -85,7 +85,7 @@ function HomeLayout({children}){
                             <Link to={"/contact"}>Contact Us</Link> 
                         </li>
                         <li>
-                            <Link to={"/about"}>About Us</Link>
+                            <Link to={"/contact"}>About Us</Link>
                         </li>
                         {isLoggedIn ? (
                             <li className="absolute bottom-4 w-[90%]">
