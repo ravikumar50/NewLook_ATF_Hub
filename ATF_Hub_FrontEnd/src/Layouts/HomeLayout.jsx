@@ -84,37 +84,21 @@ function HomeLayout({children}){
                         <li>
                             <Link to={"/about"}>About Us</Link>
                         </li>
-                        {!isLoggedIn && (
-                            <li className="absolute bottom-4 w-[90%]">
-                                <div className="w-full flex items-center justify-center">
-                                    <button className="btn btn-primary px-4 py-1 font-semibold rounded-md w-full text-center" onClick={() => navigate("/login")}>
-                                        Login
-                                    </button>
-                                </div>
-                            </li>
-                        )}
+                        <li className="absolute bottom-4 w-[90%]">
+                            <div className="w-full flex items-center justify-center">
+                                <button className="btn btn-secondary px-4 py-1 font-semibold rounded-md w-full text-center" onClick={() => navigate("/logout")}>
+                                    Logout
+                                </button>
+                            </div>
+                        </li>
+                    
 
-                        {isLoggedIn && (
-                            <li className="absolute bottom-4 w-[90%]">
-                                <div className="w-full flex items-center justify-center">
-                                    <button className="btn btn-primary px-4 py-1 font-semibold rounded-md w-1/2 text-center" onClick={() => navigate("/user/profile")}>
-                                        Profile
-                                    </button>
-                                    <button className="btn btn-secondary px-4 py-1 font-semibold rounded-md w-1/2 text-center" onClick={handleLogout}>
-                                        Logout
-                                    </button>
-                                </div>
-                            </li>
-                        )}
 
                         
                     </ul>
                 </div>
             
             </div>
-
-            
-
             {children}
 
             <Footer/>
